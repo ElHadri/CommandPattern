@@ -1,0 +1,5 @@
+- creta devices.
+- create commands.
+- create a remote control + parameterize.
+---- add UIslots
+---- add slots as a containers of commands (map commands & buttons)
