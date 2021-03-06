@@ -24,25 +24,25 @@
         </Grid.ColumnDefinitions>
 
         <Border Grid.Row="0" Background="GreenYellow" BorderThickness="2" BorderBrush="Gray">
-            <TextBlock x:Name="_uiSlot1" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <TextBlock x:Name="_uiSlot0" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
         <Border Grid.Row="1" Background="GreenYellow" BorderThickness="2" BorderBrush="Gray">
-            <TextBlock x:Name="_uiSlot2" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <TextBlock x:Name="_uiSlot1" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
         <Border Grid.Row="2" Background="GreenYellow" BorderThickness="2" BorderBrush="Gray">
-            <TextBlock x:Name="_uiSlot3" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <TextBlock x:Name="_uiSlot2" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
         <Border Grid.Row="3" Background="GreenYellow" BorderThickness="2" BorderBrush="Gray">
-            <TextBlock x:Name="_uiSlot4" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <TextBlock x:Name="_uiSlot3" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
         <Border Grid.Row="4" Background="GreenYellow" BorderThickness="2" BorderBrush="Gray">
-            <TextBlock x:Name="_uiSlot5" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <TextBlock x:Name="_uiSlot4" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
         <Border Grid.Row="5" Background="GreenYellow" BorderThickness="2" BorderBrush="Gray">
-            <TextBlock x:Name="_uiSlot6" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <TextBlock x:Name="_uiSlot5" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
         <Border Grid.Row="6" Background="GreenYellow" BorderThickness="2" BorderBrush="Gray">
-            <TextBlock x:Name="_uiSlot7" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <TextBlock x:Name="_uiSlot6" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
 
         <Button Grid.Row="0" Grid.Column="1" Content="ON" x:Name="_onButton1" Click="_onButtonPushed"/>

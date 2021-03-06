@@ -1,5 +1,6 @@
 ﻿using RemoteControllerWithCommandPattern.Commands;
 
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -7,27 +8,58 @@ namespace RemoteControllerWithCommandPattern
 {
     public partial class RemoteControl : UserControl
     {
-        // Slots
-        IMyCommand[,] Commands = new IMyCommand[7, 2];
-        string[] UiSlots = new string[7];
+        IMyCommand[,] Commands;
 
         public RemoteControl()
         {
             InitializeComponent();
+
+            Commands = new IMyCommand[7, 2];
+            for (int i = 0; i < Commands.GetLength(0); i++)
+                for (int j = 0; j < Commands.GetLength(1); j++)
+                    Commands[i, j] = new NoCommand();
+
+            _uiSlot0.Text = "Empty";
+            _uiSlot1.Text = "Empty";
+            _uiSlot2.Text = "Empty";
+            _uiSlot3.Text = "Empty";
+            _uiSlot4.Text = "Empty";
+            _uiSlot5.Text = "Empty";
+            _uiSlot6.Text = "Empty";
+
         }
 
-        public void SetCommands(IMyCommand[,] commands, string[] uiSlots)
+        public void SetCommand((int, int) position, IMyCommand command, string uiSlot)
         {
-            UiSlots = uiSlots;
-            _uiSlot1.Text = UiSlots[0];
-            _uiSlot2.Text = UiSlots[1];
-            _uiSlot3.Text = UiSlots[2];
-            _uiSlot4.Text = UiSlots[3];
-            _uiSlot5.Text = UiSlots[4];
-            _uiSlot6.Text = UiSlots[5];
-            _uiSlot7.Text = UiSlots[6];
+            switch (position.Item1)
+            {
+                case 0:
+                    _uiSlot0.Text = uiSlot;
+                    break;
+                case 1:
+                    _uiSlot1.Text = uiSlot;
+                    break;
+                case 2:
+                    _uiSlot2.Text = uiSlot;
+                    break;
+                case 3:
+                    _uiSlot3.Text = uiSlot;
+                    break;
+                case 4:
+                    _uiSlot4.Text = uiSlot;
+                    break;
+                case 5:
+                    _uiSlot5.Text = uiSlot;
+                    break;
+                case 6:
+                    _uiSlot6.Text = uiSlot;
+                    break;
 
-            Commands = commands;
+                default:
+                    break;
+            }
+
+            Commands[position.Item1, position.Item2] = command;
         }
 
         private (int, int) _helperSwitcher(string buttonName)
@@ -74,5 +106,29 @@ namespace RemoteControllerWithCommandPattern
             int y = _helperSwitcher(((Button)e.Source).Name).Item2;
             Commands[x, y].Execute();
         }
+
+
+        // Console------------------------------------
+        public override string ToString()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("\n------ Remote Control -------\n");
+            for (int i = 0; i < Commands.GetLength(0); i++)
+            {
+                for (int j = 0; j < Commands.GetLength(1); j++)
+                {
+                    if (j == 0)
+                    {
+                        stringBuilder.Append("[slot " + i + "] " + Commands[i, j].GetType().Name);
+                    }
+                    if (j == 1)
+                    {
+                        stringBuilder.Append("----" + Commands[i, j].GetType().Name + "\n");
+                    }
+                }
+            }
+            return stringBuilder.ToString();
+        }
     }
 }
+

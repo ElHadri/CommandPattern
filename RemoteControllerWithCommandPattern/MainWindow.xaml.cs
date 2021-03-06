@@ -16,36 +16,27 @@ namespace RemoteControllerWithCommandPattern
             var livingRoomLight = new Light("Living Room Light");
             var garageDoor = new GarageDoor();
             var outdoorLight = new OutdoorLight();
-            var noDevice = new NoDevice();
 
-            // commands (parameterize)
-            var commands = new IMyCommand[,]
-            {
-                {new LightOnCommand(kitchenLight), new LightOffCommand(kitchenLight)},
-                {new LightOnCommand(livingRoomLight), new LightOffCommand(livingRoomLight)},
-                {new GarageDoorOpenCommand(garageDoor), new GarageDoorCloseCommand(garageDoor)},
-                {new OutdoorLightOnCommand(outdoorLight), new OutdoorLightOffCommand(outdoorLight)},
-                {new NoCommand(noDevice),new NoCommand(noDevice)},
-                {new NoCommand(noDevice),new NoCommand(noDevice)},
-                {new NoCommand(noDevice),new NoCommand(noDevice)}
-            };
-
-            // UI slot names (parameterize)
-            var uiSlots = new string[]
-            {
-                kitchenLight.Name,
-                livingRoomLight.Name,
-                garageDoor.Name,
-                outdoorLight.Name,
-                noDevice.Name,
-                noDevice.Name,
-                noDevice.Name
-            };
-
+            // create remote control
             var remoteControl = new RemoteControl();
-            remoteControl.SetCommands(commands, uiSlots);
+
+            // parameterize remote cpntrol
+            remoteControl.SetCommand((0,0), new LightOnCommand(kitchenLight), kitchenLight.Name);
+            remoteControl.SetCommand((0,1), new LightOffCommand(kitchenLight), kitchenLight.Name);
+
+            remoteControl.SetCommand((1,0), new LightOnCommand(livingRoomLight), livingRoomLight.Name);
+            remoteControl.SetCommand((1,1), new LightOffCommand(livingRoomLight), livingRoomLight.Name);
+
+            remoteControl.SetCommand((2,0), new GarageDoorOpenCommand(garageDoor), garageDoor.Name);
+            remoteControl.SetCommand((2,1), new GarageDoorCloseCommand(garageDoor), garageDoor.Name);
+
+            remoteControl.SetCommand((3,0), new OutdoorLightOnCommand(outdoorLight), outdoorLight.Name);
+            remoteControl.SetCommand((3,1), new OutdoorLightOffCommand(outdoorLight), outdoorLight.Name);
 
             _grid.Children.Add(remoteControl);
+
+            // console
+            MessageBox.Show(remoteControl.ToString()); 
         }
     }
 }

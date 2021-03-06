@@ -5,9 +5,9 @@ namespace RemoteControllerWithCommandPattern.Commands
     class NoCommand : IMyCommand
     {
         NoDevice NoDevice;
-        public NoCommand(NoDevice noDevice)
+        public NoCommand()
         {
-            NoDevice = noDevice;
+            NoDevice = new NoDevice();
         }
 
         public void Execute()
