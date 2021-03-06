@@ -45,20 +45,20 @@
             <TextBlock x:Name="_uiSlot7" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
 
-        <Button Grid.Row="0" Grid.Column="1" Content="ON" x:Name="_onButton1" Click="_onButton1_Click"/>
-        <Button Grid.Row="0" Grid.Column="2" Content="OFF" x:Name="_offButton1"  Click="_offButton1_Click"/>
-        <Button Grid.Row="1" Grid.Column="1" Content="ON" x:Name="_onButton2" Click="_onButton2_Click"/>
-        <Button Grid.Row="1" Grid.Column="2" Content="OFF" x:Name="_offButton2" Click="_offButton2_Click"/>
-        <Button Grid.Row="2" Grid.Column="1" Content="ON" x:Name="_onButton3" Click="_onButton3_Click"/>
-        <Button Grid.Row="2" Grid.Column="2" Content="OFF" x:Name="_offButton3" Click="_offButton3_Click"/>
-        <Button Grid.Row="3" Grid.Column="1" Content="ON" x:Name="_onButton4" Click="_onButton4_Click"/>
-        <Button Grid.Row="3" Grid.Column="2" Content="OFF" x:Name="_offButton4" Click="_offButton4_Click"/>
-        <Button Grid.Row="4" Grid.Column="1" Content="ON" x:Name="_onButton5" Click="_onButton5_Click"/>
-        <Button Grid.Row="4" Grid.Column="2" Content="OFF" x:Name="_offButton5" Click="_offButton5_Click"/>
-        <Button Grid.Row="5" Grid.Column="1" Content="ON" x:Name="_onButton6" Click="_onButton6_Click"/>
-        <Button Grid.Row="5" Grid.Column="2" Content="OFF" x:Name="_offButton6" Click="_offButton6_Click"/>
-        <Button Grid.Row="6" Grid.Column="1" Content="ON" x:Name="_onButton7" Click="_onButton7_Click"/>
-        <Button Grid.Row="6" Grid.Column="2" Content="OFF" x:Name="_offButton7" Click="_offButton7_Click"/>
+        <Button Grid.Row="0" Grid.Column="1" Content="ON" x:Name="_onButton1" Click="_onButtonPushed"/>
+        <Button Grid.Row="0" Grid.Column="2" Content="OFF" x:Name="_offButton1"  Click="_onButtonPushed"/>
+        <Button Grid.Row="1" Grid.Column="1" Content="ON" x:Name="_onButton2" Click="_onButtonPushed"/>
+        <Button Grid.Row="1" Grid.Column="2" Content="OFF" x:Name="_offButton2" Click="_onButtonPushed"/>
+        <Button Grid.Row="2" Grid.Column="1" Content="ON" x:Name="_onButton3" Click="_onButtonPushed"/>
+        <Button Grid.Row="2" Grid.Column="2" Content="OFF" x:Name="_offButton3" Click="_onButtonPushed"/>
+        <Button Grid.Row="3" Grid.Column="1" Content="ON" x:Name="_onButton4" Click="_onButtonPushed"/>
+        <Button Grid.Row="3" Grid.Column="2" Content="OFF" x:Name="_offButton4" Click="_onButtonPushed"/>
+        <Button Grid.Row="4" Grid.Column="1" Content="ON" x:Name="_onButton5" Click="_onButtonPushed"/>
+        <Button Grid.Row="4" Grid.Column="2" Content="OFF" x:Name="_offButton5" Click="_onButtonPushed"/>
+        <Button Grid.Row="5" Grid.Column="1" Content="ON" x:Name="_onButton6" Click="_onButtonPushed"/>
+        <Button Grid.Row="5" Grid.Column="2" Content="OFF" x:Name="_offButton6" Click="_onButtonPushed"/>
+        <Button Grid.Row="6" Grid.Column="1" Content="ON" x:Name="_onButton7" Click="_onButtonPushed"/>
+        <Button Grid.Row="6" Grid.Column="2" Content="OFF" x:Name="_offButton7" Click="_onButtonPushed"/>
 
         <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Content="UNDO" x:Name="_undoButton"/>
     </Grid>

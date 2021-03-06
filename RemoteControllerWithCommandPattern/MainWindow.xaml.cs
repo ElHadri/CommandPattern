@@ -11,36 +11,41 @@ namespace RemoteControllerWithCommandPattern
         {
             InitializeComponent();
 
-            // devices
-            var light = new Light();
+            // devices (are specifis devices. Ex: Light in the living room)
+            var kitchenLight = new Light("Kitchen Light");
+            var livingRoomLight = new Light("Living Room Light");
             var garageDoor = new GarageDoor();
             var outdoorLight = new OutdoorLight();
+            var noDevice = new NoDevice();
 
             // commands (parameterize)
             var commands = new IMyCommand[,]
             {
-                {new LightOnCommand(light), new LightOffCommand(light)},
+                {new LightOnCommand(kitchenLight), new LightOffCommand(kitchenLight)},
+                {new LightOnCommand(livingRoomLight), new LightOffCommand(livingRoomLight)},
                 {new GarageDoorOpenCommand(garageDoor), new GarageDoorCloseCommand(garageDoor)},
                 {new OutdoorLightOnCommand(outdoorLight), new OutdoorLightOffCommand(outdoorLight)},
-                {null,null},
-                {null,null},
-                {null,null},
-                {null,null}
+                {new NoCommand(noDevice),new NoCommand(noDevice)},
+                {new NoCommand(noDevice),new NoCommand(noDevice)},
+                {new NoCommand(noDevice),new NoCommand(noDevice)}
             };
 
             // UI slot names (parameterize)
             var uiSlots = new string[]
             {
-                light.Name,
+                kitchenLight.Name,
+                livingRoomLight.Name,
                 garageDoor.Name,
                 outdoorLight.Name,
-                "Empty",
-                "Empty",
-                "Empty",
-                "Empty"
+                noDevice.Name,
+                noDevice.Name,
+                noDevice.Name
             };
 
-            _grid.Children.Add(new RemoteControl(commands, uiSlots));
+            var remoteControl = new RemoteControl();
+            remoteControl.SetCommands(commands, uiSlots);
+
+            _grid.Children.Add(remoteControl);
         }
     }
 }

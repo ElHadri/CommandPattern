@@ -9,7 +9,12 @@ namespace RemoteControllerWithCommandPattern.Devices
 {
     public class Light
     {
-        public string Name = "Light";
+        public string Name;
+
+        public Light(string location)
+        {
+            Name = location;
+        }
 
         public void On() { MessageBox.Show("Light is ON"); }
         public void Off() { MessageBox.Show("Light is OFF"); }
