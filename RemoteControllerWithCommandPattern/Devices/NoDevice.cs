@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Diagnostics;
+using System.Windows;
 
 namespace RemoteControllerWithCommandPattern.Devices
 {
@@ -6,6 +7,7 @@ namespace RemoteControllerWithCommandPattern.Devices
     {
         public string Name = "No Device";
 
-        public void DoNothing() { MessageBox.Show("Nothing to do !!"); }
+        public void DoNothing() { Debug.WriteLine("Nothing to do !!"); }
+        //public void DoNothing() { MessageBox.Show("Nothing to do !!"); }
     }
 }

@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DvJPpqD/yJqRX6BLHhWyf5DJLr1ZVosZMVSgKUtlpnT2RKiKEpfl9S5mxgvskS2zJChOFAr+d93BDStxNMZJAw==",
+  "dgSpecHash": "KLF/1/D+i5F9RKl1yUH7EVXERdz/2GY3EQQuE3Kp8Nez106QL2CfGSkiKcWE9wfyJCgva304lLQz1aGKiVgBpw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Adil\\Source\\Repos\\RemoteController\\RemoteControllerWithCommandPattern\\RemoteControllerWithCommandPattern.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Adil\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.3\\microsoft.netcore.app.host.win-x64.5.0.3.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

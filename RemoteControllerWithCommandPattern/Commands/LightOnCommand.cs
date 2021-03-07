@@ -20,5 +20,10 @@ namespace RemoteControllerWithCommandPattern.Commands
         {
             Light.On();
         }
+
+        public void Undo()
+        {
+            Light.Off();
+        }
     }
 }

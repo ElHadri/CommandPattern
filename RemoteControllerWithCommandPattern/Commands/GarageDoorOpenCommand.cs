@@ -1,11 +1,5 @@
 ﻿using RemoteControllerWithCommandPattern.Devices;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace RemoteControllerWithCommandPattern.Commands
 {
     class GarageDoorOpenCommand : IMyCommand
@@ -17,8 +11,14 @@ namespace RemoteControllerWithCommandPattern.Commands
         }
         public void Execute()
         {
-            GarageDoor.LightOn(); 
+            GarageDoor.LightOn();
             GarageDoor.Up();
+        }
+
+        public void Undo()
+        {
+            GarageDoor.Down();
+            GarageDoor.LightOff();
         }
     }
 }

@@ -14,5 +14,11 @@ namespace RemoteControllerWithCommandPattern.Commands
             GarageDoor.Down();
             GarageDoor.LightOff();
         }
+
+        public void Undo()
+        {
+            GarageDoor.LightOn();
+            GarageDoor.Up();
+        }
     }
 }

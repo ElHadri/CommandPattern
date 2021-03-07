@@ -60,6 +60,6 @@
         <Button Grid.Row="6" Grid.Column="1" Content="ON" x:Name="_onButton7" Click="_onButtonPushed"/>
         <Button Grid.Row="6" Grid.Column="2" Content="OFF" x:Name="_offButton7" Click="_onButtonPushed"/>
 
-        <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Content="UNDO" x:Name="_undoButton"/>
+        <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Content="UNDO" x:Name="_undoButton" Click="_undoButton_Click"/>
     </Grid>
 </UserControl>

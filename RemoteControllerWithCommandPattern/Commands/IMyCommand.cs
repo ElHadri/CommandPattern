@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RemoteControllerWithCommandPattern.Commands
+﻿namespace RemoteControllerWithCommandPattern.Commands
 {
     public interface IMyCommand
     {
         public void Execute();
+        public void Undo();
+
+        /* for logging */
+        //public void Store();
+        //public void Load();
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,9 @@ namespace RemoteControllerWithCommandPattern.Devices
     {
         public string Name = "Outdoor Light";
 
-        public void On() { MessageBox.Show("Outdoor Light is ON"); }
-        public void Off() { MessageBox.Show("Outdoor Light is OFF"); }
+        //public void On() { MessageBox.Show("Outdoor Light is ON"); }
+        //public void Off() { MessageBox.Show("Outdoor Light is OFF"); }
+        public void On() { Debug.WriteLine("Outdoor Light is ON"); }
+        public void Off() { Debug.WriteLine("Outdoor Light is OFF"); }
     }
 }

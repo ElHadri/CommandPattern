@@ -14,5 +14,10 @@ namespace RemoteControllerWithCommandPattern.Commands
         {
             NoDevice.DoNothing();
         }
+
+        public void Undo()
+        {
+            NoDevice.DoNothing();
+        }
     }
 }

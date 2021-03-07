@@ -9,6 +9,7 @@ namespace RemoteControllerWithCommandPattern
     public partial class RemoteControl : UserControl
     {
         IMyCommand[,] Commands;
+        IMyCommand PrevCommand;
 
         public RemoteControl()
         {
@@ -18,6 +19,8 @@ namespace RemoteControllerWithCommandPattern
             for (int i = 0; i < Commands.GetLength(0); i++)
                 for (int j = 0; j < Commands.GetLength(1); j++)
                     Commands[i, j] = new NoCommand();
+
+            PrevCommand = new NoCommand();
 
             _uiSlot0.Text = "Empty";
             _uiSlot1.Text = "Empty";
@@ -105,6 +108,13 @@ namespace RemoteControllerWithCommandPattern
             int x = _helperSwitcher(((Button)e.Source).Name).Item1;
             int y = _helperSwitcher(((Button)e.Source).Name).Item2;
             Commands[x, y].Execute();
+            PrevCommand = Commands[x, y];
+        }
+
+        private void _undoButton_Click(object sender, RoutedEventArgs e)
+        {
+            PrevCommand.Undo();
+            PrevCommand = new NoCommand();
         }
 
 
@@ -127,8 +137,11 @@ namespace RemoteControllerWithCommandPattern
                     }
                 }
             }
+            stringBuilder.Append("Undo Command: "+PrevCommand.GetType().Name + "\n");
+
             return stringBuilder.ToString();
         }
+
     }
 }
 
